@@ -394,3 +394,4 @@ dist
 
 # Custom
 .vscode/*
+package-lock.json
