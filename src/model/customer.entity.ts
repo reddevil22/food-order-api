@@ -16,4 +16,7 @@ export class Customers {
 
     @CreateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
     created_on: Date;
+
+    @Column()
+    public password: string;
 }

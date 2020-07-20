@@ -19,6 +19,10 @@ export class CustomersService {
         return await this.customerRepository.findOneOrFail(id);
     }
 
+    public async findByEmail(email: string): Promise<Customers | null> {
+        return await this.customerRepository.findOneOrFail({ email });
+    }
+
     public async create(todo: CustomerDto): Promise<Customers> {
         return await this.customerRepository.save(todo);
     }
