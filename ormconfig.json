@@ -1,0 +1,19 @@
+{
+  "type": "postgres",
+  "host": "database-1.cuee6unsdksp.eu-west-2.rds.amazonaws.com",
+  "port": 5432,
+  "username": "postgres",
+  "password": "Joel&Nicole4eva",
+  "database": "postgres",
+  "entities": [
+    null
+  ],
+  "migrationsTableName": "migration",
+  "migrations": [
+    "src/migration/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "src/migration"
+  },
+  "ssl": false
+}
