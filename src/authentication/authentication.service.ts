@@ -3,7 +3,7 @@ import * as bcrypt from 'bcrypt';
 import { CustomersService } from 'src/customers/customers.service';
 import RegisterDto from './dto/register.dto';
 import PostgresErrorCode from 'src/database/postgresErrorCodes.enum';
-import { Customers } from 'src/model';
+import { Customers } from 'src/entity';
 
 @Injectable()
 export class AuthenticationService {

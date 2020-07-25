@@ -13,7 +13,9 @@
     "src/migration/*.ts"
   ],
   "cli": {
-    "migrationsDir": "src/migration"
+    "migrationsDir": "src/migration",
+    "entitiesDir": "src/entity"
   },
-  "ssl": false
+  "ssl": false,
+  "synchronize": false
 }
