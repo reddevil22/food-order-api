@@ -23,18 +23,18 @@ export class CustomersService {
         return await this.customerRepository.findOneOrFail({ email });
     }
 
-    public async create(todo: CustomerDto): Promise<Customers> {
-        return await this.customerRepository.save(todo);
+    public async create(customer: CustomerDto): Promise<Customers> {
+        return await this.customerRepository.save(customer);
     }
 
     public async update(
         id: number,
         newValue: CustomerDto,
     ): Promise<Customers | null> {
-        const todo = await this.customerRepository.findOneOrFail(id);
-        if (!todo.id) {
+        const customer = await this.customerRepository.findOneOrFail(id);
+        if (!customer.id) {
             // tslint:disable-next-line:no-console
-            console.error("Todo doesn't exist");
+            console.error("customer doesn't exist");
         }
         await this.customerRepository.update(id, newValue);
         return await this.customerRepository.findOne(id);

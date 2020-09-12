@@ -6,7 +6,7 @@
   "password": "Joel&Nicole4eva",
   "database": "postgres",
   "entities": [
-    null
+    "src/entity/*.entity.ts"
   ],
   "migrationsTableName": "migration",
   "migrations": [

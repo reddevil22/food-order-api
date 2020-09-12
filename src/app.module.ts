@@ -5,7 +5,6 @@ require('dotenv').config();
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CustomersModule } from './customers/customers.module';
-import { AuthenticationModule } from './authentication/authentication.module';
 
 @Module({
 	imports: [
@@ -18,15 +17,13 @@ import { AuthenticationModule } from './authentication/authentication.module';
 			database: process.env.POSTGRES_DATABASE,
 			autoLoadEntities: true,
 			migrationsTableName: 'migration',
-			migrations: ['src/migration/*.ts'],
 			cli: {
 				migrationsDir: 'src/migration',
 				entitiesDir: "src/entity",
 			},
 			synchronize: false
 		}),
-		CustomersModule,
-		AuthenticationModule
+		CustomersModule
 	],
 	controllers: [AppController],
 	providers: [AppService],

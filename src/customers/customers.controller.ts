@@ -19,11 +19,17 @@ export class CustomersController {
 
     @Post()
     public async create(@Body() createCustomerDto: CustomerDto): Promise<Customers> {
-        return await this.service.create({ ...createCustomerDto, created_on: new Date() });
+        const newCustomer = await this.service.create({ ...createCustomerDto, created_on: new Date() });
+        const returnObject = newCustomer;
+        delete returnObject.password
+        return returnObject;
     }
 
     @Put(':id')
     public async update(@Param('id') id: number, @Body() createCustomerDto: CustomerDto): Promise<Customers | null> {
-        return this.service.update(id, createCustomerDto)
+        const currentCustomer = await this.service.findById(id);
+        const updatedCustomer = await this.service.update(id, {...currentCustomer, ...createCustomerDto});
+        delete updatedCustomer.password;
+        return updatedCustomer;
     }
 }
